@@ -1,0 +1,18 @@
+# Pi Stop-Motion Workshop config
+camera:
+  resolution: [1920, 1080]   # capture resolution
+  preview_resolution: [640, 360]  # MJPEG stream size
+  jpeg_quality: 85
+  autofocus: true
+
+server:
+  host: "0.0.0.0"
+  port: 5000
+
+paths:
+  data_dir: "data"   # projects live here
+
+export:
+  default_fps: 12
+  codec: "libx264"
+  pix_fmt: "yuv420p"

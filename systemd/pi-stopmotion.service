@@ -1,0 +1,15 @@
+[Unit]
+Description=Pi Stop-Motion Workshop
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/pi/pi-stopmotion-workshop
+ExecStart=/usr/bin/python3 /home/pi/pi-stopmotion-workshop/app.py
+Restart=on-failure
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pi Stop-Motion Workshop</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header>
+  <h1>🎬 Pi Stop-Motion Workshop</h1>
+  <div class="projects">
+    <select id="projectSelect"></select>
+    <button id="newProjectBtn" title="New project">＋ New</button>
+    <button id="deleteProjectBtn" title="Delete project">🗑</button>
+  </div>
+</header>
+
+<main>
+  <section class="stage">
+    <div class="view-wrap">
+      <img id="liveView" src="/stream.mjpg" alt="Live camera preview">
+      <img id="onion" alt="">
+      <div id="captureFlash"></div>
+    </div>
+    <div class="controls">
+      <button id="captureBtn" class="big">📸 Capture frame <kbd>Space</kbd></button>
+      <label>Onion skin
+        <input type="range" id="onionOpacity" min="0" max="80" value="35">
+        <span id="onionVal">35%</span>
+      </label>
+      <label><input type="checkbox" id="onionToggle" checked> show last frame</label>
+    </div>
+  </section>
+
+  <section class="side">
+    <h2>Playback</h2>
+    <div class="controls">
+      <button id="playBtn">▶ Play</button>
+      <label>FPS <input type="number" id="fps" min="1" max="60" value="12"></label>
+      <button id="exportBtn">🎞 Export MP4</button>
+    </div>
+    <div id="playerWrap" hidden>
+      <img id="player" alt="playback">
+      <div id="exportLink"></div>
+    </div>
+
+    <h2>Timeline <span id="frameCount"></span></h2>
+    <div id="timeline" class="timeline"></div>
+  </section>
+</main>
+
+<footer>
+  <p>Tip: keep the camera still, move the subject a tiny bit, hit <kbd>Space</kbd>. Small moves = smooth motion.</p>
+</footer>
+
+<script src="/static/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+pyyaml>=6.0
+numpy>=1.24
+# picamera2 and libcamera are installed via apt on Raspberry Pi OS:
+#   sudo apt install -y python3-picamera2
+# ffmpeg for export:
+#   sudo apt install -y ffmpeg
